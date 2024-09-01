@@ -7,6 +7,7 @@ services:
       context: . # The build context is the current directory
       dockerfile: Dockerfile
     command: bun dev -H 0.0.0.0 # Use `bun dev` to listen on default interface
+    env_file: stack.env # Load environment variables
     ports:
       - '3001:3000' # Maps port 3001 on the host to port 3000 in the container.
     depends_on:
