@@ -1,6 +1,7 @@
 name: morphic
 services:
   morphic:
+    container_name: morphic
     build:
       context: .
       dockerfile: Dockerfile
