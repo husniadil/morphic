@@ -1,0 +1,9 @@
+name: morphic
+services:
+  morphic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bun dev -H 0.0.0.0
+    ports:
+      - '10002:3000'
