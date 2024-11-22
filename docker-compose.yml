@@ -7,5 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command: bun dev -H 0.0.0.0
+    restart: always
     ports:
       - '10003:3000'
