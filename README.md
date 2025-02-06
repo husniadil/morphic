@@ -2,7 +2,7 @@
 
 An AI-powered search engine with a generative UI.
 
-![capture](/public/screenshot-2025-01-15.png)
+![capture](/public/screenshot-2025-01-31.png)
 
 ## 🗂️ Overview
 
@@ -24,6 +24,7 @@ An AI-powered search engine with a generative UI.
 - Natural language question understanding
 - Multiple search providers support (Tavily, SearXNG, Exa)
 - Model selection from UI (switch between available AI models)
+  - Reasoning models with visible thought process
 
 ### Chat & History
 
@@ -40,6 +41,7 @@ An AI-powered search engine with a generative UI.
 - Ollama
 - Groq
 - DeepSeek
+- Fireworks
 - OpenAI Compatible
 
 ### Search Capabilities
@@ -68,7 +70,7 @@ An AI-powered search engine with a generative UI.
 
 ### AI & Search
 
-- [OpenAI](https://openai.com/) - Default AI provider (Optional: Google AI, Anthropic, Groq, Ollama, Azure OpenAI)
+- [OpenAI](https://openai.com/) - Default AI provider (Optional: Google AI, Anthropic, Groq, Ollama, Azure OpenAI, DeepSeek, Fireworks)
 - [Tavily AI](https://tavily.com/) - Default search provider
 - Alternative providers:
   - [SearXNG](https://docs.searxng.org/) - Self-hosted search
@@ -167,22 +169,26 @@ This will allow you to use Morphic as your default search engine in the browser.
 ### List of models applicable to all
 
 - OpenAI
+  - o3-mini
   - gpt-4o
   - gpt-4o-mini
   - gpt-4-turbo
   - gpt-3.5-turbo
 - Google
-  - Gemini 1.5 Pro (Unstable)
-  - Gemini 2.0 Flash (Experimental)
+  - Gemini 2.0 Pro (Experimental)
+  - Gemini 2.0 Flash Thinking (Experimental)
+  - Gemini 2.0 Flash
 - Anthropic
   - Claude 3.5 Sonnet
+  - Claude 3.5 Hike
 - Ollama
   - qwen2.5
+  - deepseek-r1
 - Groq
-  - llama3-groq-8b-8192-tool-use-preview
-  - llama3-groq-70b-8192-tool-use-preview
+  - deepseek-r1-distill-llama-70b
 - DeepSeek
-  - DeepSeek v3 [(Unstable)](https://github.com/vercel/ai/issues/4313#issuecomment-2587891644)
+  - DeepSeek V3
+  - DeepSeek R1
 
 ## ⚡ AI SDK Implementation
 

@@ -1,14 +1,14 @@
-import { tool } from 'ai'
-import Exa from 'exa-js'
 import { searchSchema } from '@/lib/schema/search'
-import { sanitizeUrl } from '@/lib/utils'
 import {
   SearchResultImage,
-  SearchResults,
   SearchResultItem,
+  SearchResults,
   SearXNGResponse,
   SearXNGResult
 } from '@/lib/types'
+import { sanitizeUrl } from '@/lib/utils'
+import { tool } from 'ai'
+import Exa from 'exa-js'
 
 export const searchTool = tool({
   description: 'Search the web for information',
@@ -82,9 +82,32 @@ export const searchTool = tool({
       }
     }
 
+    console.log('completed search')
     return searchResult
   }
 })
+
+export async function search(
+  query: string,
+  maxResults: number = 10,
+  searchDepth: 'basic' | 'advanced' = 'basic',
+  includeDomains: string[] = [],
+  excludeDomains: string[] = []
+): Promise<SearchResults> {
+  return searchTool.execute(
+    {
+      query,
+      max_results: maxResults,
+      search_depth: searchDepth,
+      include_domains: includeDomains,
+      exclude_domains: excludeDomains
+    },
+    {
+      toolCallId: 'search',
+      messages: []
+    }
+  )
+}
 
 async function tavilySearch(
   query: string,
