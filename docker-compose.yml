@@ -1,0 +1,12 @@
+services:
+  morphic:
+    container_name: morphic
+    image: ghcr.io/miurla/morphic:latest
+    env_file: stack.env
+    ports:
+      - '10003:3000'
+    volumes:
+      - data:/app/public/config
+
+volumes:
+  data:
